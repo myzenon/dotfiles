@@ -1,0 +1,4 @@
+rename-window Editor;
+new-window;
+rename-window Runner;
+last-window;
