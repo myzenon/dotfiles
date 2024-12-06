@@ -24,3 +24,5 @@
     colorMoved = default
 [pull]
 	rebase = true
+[rebase]
+	autoStash = true
