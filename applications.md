@@ -15,3 +15,4 @@
 - font-meslo-lg-nerd-font: `brew install --cask font-meslo-lg-nerd-font`
 - llvm: `brew install llvm`
 - commitizen: `brew install commitizen`
+- ripgrep: `brew install ripgrep`
