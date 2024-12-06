@@ -156,6 +156,7 @@ alt - p : yabai -m window --toggle sticky --toggle pip
 
 # open app
 alt - t : open -na "/Applications/kitty.app" --args --single-instance --directory /home/zenon
+alt - b : open -a Safari
 
 # minimize window
 alt - m : yabai -m window --minimize; yabai -m window --focus first;
