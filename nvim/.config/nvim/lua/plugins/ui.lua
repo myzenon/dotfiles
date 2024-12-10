@@ -156,4 +156,30 @@ return {
       end, {})
     end,
   },
+  {
+    "zaldih/themery.nvim",
+    lazy = false,
+    config = function()
+      require("themery").setup({
+        themes = {
+          {
+            name = "Seoul256",
+            colorscheme = "seoul256",
+          },
+          {
+            name = "Catppuccin",
+            colorscheme = "catppuccin-mocha",
+          },
+          {
+            name = "Bamboo",
+            colorscheme = "bamboo",
+          },
+          {
+            name = "Jelly Beans",
+            colorscheme = "jellybeans",
+          },
+        },
+      })
+    end,
+  },
 }
