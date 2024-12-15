@@ -16,3 +16,4 @@
 - llvm: `brew install llvm`
 - commitizen: `brew install commitizen`
 - ripgrep: `brew install ripgrep`
+- fzf: `brew install fzf`

@@ -12,14 +12,11 @@ require("lazy").setup({
     {
       "LazyVim/LazyVim",
       import = "lazyvim.plugins",
-      opts = {
-        -- colorscheme = "jellybeans",
-        colorscheme = "seoul256",
-      },
+      opts = {},
     },
 
     -- code
-    -- { import = "lazyvim.plugins.extras.coding.blink" },
+    -- { import = "lazyvim.plugins.extras.coding.nvim-cmp" },
 
     -- lang
     { import = "lazyvim.plugins.extras.lang.docker" },
@@ -32,6 +29,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.yaml" },
 
     -- editor
+    -- { import = "lazyvim.plugins.extras.editor.telescope" },
     -- { import = "lazyvim.plugins.extras.editor.mini-files" },
     { import = "lazyvim.plugins.extras.editor.harpoon2" },
     { import = "lazyvim.plugins.extras.editor.inc-rename" },

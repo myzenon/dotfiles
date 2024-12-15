@@ -156,9 +156,11 @@ return {
       end, {})
     end,
   },
+  { "rktjmp/lush.nvim" },
   {
     "zaldih/themery.nvim",
     lazy = false,
+    priority = 1000,
     config = function()
       require("themery").setup({
         themes = {
@@ -176,7 +178,7 @@ return {
           },
           {
             name = "Jelly Beans",
-            colorscheme = "jellybeans",
+            colorscheme = "jellybeans-nvim",
           },
         },
       })
