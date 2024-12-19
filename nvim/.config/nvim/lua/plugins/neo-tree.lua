@@ -39,26 +39,28 @@ return {
       window = {
         position = "float",
         width = "fit_content",
-        --   mappings = {
-        --     ["l"] = "open",
-        --     ["h"] = "close_node",
-        --     ["<space>"] = "none",
-        --     ["Y"] = {
-        --       function(state)
-        --         local node = state.tree:get_node()
-        --         local path = node:get_id()
-        --         vim.fn.setreg("+", path, "c")
-        --       end,
-        --       desc = "Copy Path to Clipboard",
-        --     },
-        --     ["O"] = {
-        --       function(state)
-        --         require("lazy.util").open(state.tree:get_node().path, { system = true })
-        --       end,
-        --       desc = "Open with System Application",
-        --     },
-        --     ["P"] = { "toggle_preview", config = { use_float = false } },
-        --   },
+        mappings = {
+          --     ["l"] = "open",
+          --     ["h"] = "close_node",
+          --     ["<space>"] = "none",
+          ["s"] = "",
+          ["<leader>p"] = {
+            function(state)
+              local node = state.tree:get_node()
+              local path = node:get_id()
+              vim.fn.setreg("+", path, "c")
+              print("Copy Path to Clipboard")
+            end,
+            desc = "Copy Path to Clipboard",
+          },
+          ["o"] = {
+            function(state)
+              require("lazy.util").open(state.tree:get_node().path, { system = true })
+            end,
+            desc = "Open with System Application",
+          },
+          --     ["P"] = { "toggle_preview", config = { use_float = false } },
+        },
       },
       filesystem = {
         filtered_items = {
