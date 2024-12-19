@@ -154,6 +154,7 @@ alt-shift-9 = 'move-node-to-workspace 9'
 # alt-shift-v = 'move-node-to-workspace V'
 
 alt-shift-f = 'fullscreen'
+alt-m = 'macos-native-minimize'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'
@@ -200,6 +201,10 @@ alt-shift-h = ['join-with left', 'mode main']
 alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
+
+[workspace-to-monitor-force-assignment]
+6 = 2
+7 = 3
 
 # [[on-window-detected]]
 # if.app-id = 'com.github.wez.wezterm'
