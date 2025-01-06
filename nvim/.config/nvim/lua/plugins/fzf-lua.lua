@@ -37,7 +37,7 @@ return {
     -- { "<leader>sl", "<cmd>FzfLua loclist<cr>", desc = "Location List" },
     -- { "<leader>sM", "<cmd>FzfLua man_pages<cr>", desc = "Man Pages" },
     -- { "<leader>sm", "<cmd>FzfLua marks<cr>", desc = "Jump to Mark" },
-    -- { "<leader>sR", "<cmd>FzfLua resume<cr>", desc = "Resume" },
+    { ";;", "<cmd>FzfLua resume<cr>", desc = "Resume" },
     -- { "<leader>sq", "<cmd>FzfLua quickfix<cr>", desc = "Quickfix List" },
     -- { "<leader>sw", LazyVim.pick("grep_cword"), desc = "Word (Root Dir)" },
     -- { "<leader>sW", LazyVim.pick("grep_cword", { root = false }), desc = "Word (cwd)" },
