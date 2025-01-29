@@ -65,6 +65,9 @@ return {
       filesystem = {
         filtered_items = {
           hide_dotfiles = false,
+          always_show_by_pattern = { -- uses glob style patterns
+            ".env*",
+          },
         },
         follow_current_file = {
           enabled = true,
