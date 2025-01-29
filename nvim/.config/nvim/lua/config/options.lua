@@ -53,6 +53,9 @@ opt.winblend = 0
 opt.wildoptions = "pum"
 opt.pumblend = 5
 
+-- Change targets.vim key
+vim.g.targets_aiAI = "oiOI"
+
 -- Lazy redraw
 -- vim.cmd([[ set lazyredraw ]])
 
