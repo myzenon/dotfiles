@@ -6,7 +6,8 @@ return {
     config = true,
   },
   { "christoomey/vim-system-copy", lazy = false },
-  { "inkarkat/vim-ReplaceWithRegister", lazy = false },
+  { "prurigro/ReplaceWithRegister", branch = "1.42-update", lazy = false },
+  -- { "inkarkat/vim-ReplaceWithRegister", lazy = false },
   -- { "matze/vim-move", lazy = true },
   {
     "willothy/moveline.nvim",
