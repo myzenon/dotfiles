@@ -14,7 +14,7 @@ return {
         "stylua",
         "shellcheck",
         "shfmt",
-        "tailwindcss-language-server",
+        -- "tailwindcss-language-server",
         "typescript-language-server",
         "graphql-language-service-cli",
       })
