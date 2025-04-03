@@ -6,7 +6,16 @@ return {
     config = true,
   },
   { "christoomey/vim-system-copy", lazy = false },
-  { "prurigro/ReplaceWithRegister", branch = "1.42-update", lazy = false },
+  {
+    "prurigro/ReplaceWithRegister",
+    branch = "1.42-update",
+    lazy = false,
+    keys = {
+      { "pr", "<Plug>ReplaceWithRegisterOperator", desc = "ReplaceWithRegisterOperator" },
+      { "prr", "<Plug>ReplaceWithRegisterLine", desc = "ReplaceWithRegisterLine" },
+      { "pr", "<Plug>ReplaceWithRegisterVisual", mode = { "x" }, desc = "ReplaceWithRegisterVisual" },
+    },
+  },
   -- { "inkarkat/vim-ReplaceWithRegister", lazy = false },
   -- { "matze/vim-move", lazy = true },
   {
@@ -20,16 +29,16 @@ return {
       vim.keymap.set("v", "<M-J>", moveline.block_down)
     end,
   },
-  {
-    "mg979/vim-visual-multi",
-    lazy = false,
-    config = function()
-      vim.g.VM_maps = {
-        ["Add Cursor Down"] = "<Tab>j", -- new cursor down
-        ["Add Cursor Up"] = "<Tab>k", -- new cursor up
-      }
-    end,
-  },
+  -- {
+  --   "mg979/vim-visual-multi",
+  --   lazy = false,
+  --   config = function()
+  --     vim.g.VM_maps = {
+  --       ["Add Cursor Down"] = "<Tab>j", -- new cursor down
+  --       ["Add Cursor Up"] = "<Tab>k", -- new cursor up
+  --     }
+  --   end,
+  -- },
   {
     "easymotion/vim-easymotion",
     lazy = true,
@@ -63,7 +72,13 @@ return {
     event = "VeryLazy",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     config = function()
-      require("wildfire").setup()
+      require("wildfire").setup({
+        keymaps = {
+          init_selection = "<CR>",
+          node_incremental = "<CR>",
+          node_decremental = "<Tab>",
+        },
+      })
     end,
   },
   {
