@@ -5,6 +5,7 @@ return {
       vim.list_extend(opts.ensure_installed, {
         "css-lsp",
         "cssmodules-language-server",
+        -- "bacon-ls",
         -- "eslint_d",
         "html-lsp",
         "vue-language-server",
@@ -14,6 +15,7 @@ return {
         "stylua",
         "shellcheck",
         "shfmt",
+        "rust-analyzer",
         -- "tailwindcss-language-server",
         "typescript-language-server",
         "graphql-language-service-cli",

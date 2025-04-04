@@ -64,3 +64,5 @@ vim.cmd([[ set ttyfast ]])
 
 -- Disable ESLint auto format
 vim.g.lazyvim_eslint_auto_format = false
+
+-- vim.g.lazyvim_rust_diagnostics = "bacon-ls"
