@@ -180,6 +180,10 @@ return {
             name = "Jelly Beans",
             colorscheme = "jellybeans-nvim",
           },
+          {
+            name = "Nord",
+            colorscheme = "nord",
+          },
         },
       })
     end,
