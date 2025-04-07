@@ -5,4 +5,6 @@ return {
   { "catppuccin/nvim", lazy = true },
   { "ribru17/bamboo.nvim", lazy = true },
   { "gbprod/nord.nvim", lazy = true },
+  { "sainnhe/everforest", lazy = true },
+  { "vague2k/vague.nvim", lazy = true },
 }

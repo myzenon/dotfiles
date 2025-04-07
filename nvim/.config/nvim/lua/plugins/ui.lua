@@ -184,6 +184,14 @@ return {
             name = "Nord",
             colorscheme = "nord",
           },
+          {
+            name = "Everforest",
+            colorscheme = "everforest",
+          },
+          {
+            name = "Vague",
+            colorscheme = "vague",
+          },
         },
       })
     end,
