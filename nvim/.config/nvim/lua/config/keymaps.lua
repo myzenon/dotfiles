@@ -51,3 +51,18 @@ end, opts)
 keymap.set("n", "<leader>i", function()
   require("zenon.lsp").toggleInlayHints()
 end)
+
+-- Enable Rust Integration Test
+keymap.set("n", "<leader>et", function()
+  vim.cmd.RustAnalyzer({ "config", '{cargo={features={"integration_test"}}}' })
+  vim.cmd.RustAnalyzer({ "reloadSettings" })
+  vim.cmd.RustAnalyzer({ "restart" })
+  vim.notify("Enable Integration Test")
+end)
+-- Disable Rust Integration Test
+keymap.set("n", "<leader>dt", function()
+  vim.cmd.RustAnalyzer({ "config", "{cargo={features={}}}" })
+  vim.cmd.RustAnalyzer({ "reloadSettings" })
+  vim.cmd.RustAnalyzer({ "restart" })
+  vim.notify("Disabled Integration Test")
+end)
