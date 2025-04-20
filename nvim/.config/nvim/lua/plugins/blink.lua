@@ -3,10 +3,7 @@ return {
   opts = {
     completion = {
       list = {
-        selection = "auto_insert",
-      },
-      trigger = {
-        show_in_snippet = false,
+        selection = { preselect = true, auto_insert = true },
       },
       menu = {
         draw = {
@@ -15,7 +12,8 @@ return {
           },
           components = {
             label = {
-              width = { fill = true, max = 30 },
+              width = { fill = true, max = 40 },
+              highlight = "TSStrong",
             },
             label_detail = {
               width = { max = 30 },
@@ -28,11 +26,8 @@ return {
         },
       },
     },
-    sources = {
-      default = { "lsp", "path", "buffer" },
-    },
-    fuzzy = {
-      sorts = { "kind", "label", "score" },
+    appearance = {
+      use_nvim_cmp_as_default = true,
     },
     keymap = {
       preset = "enter",
