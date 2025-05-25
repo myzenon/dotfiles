@@ -25,8 +25,8 @@ return {
       local moveline = require("moveline")
       vim.keymap.set("n", "<M-K>", moveline.up)
       vim.keymap.set("n", "<M-J>", moveline.down)
-      vim.keymap.set("v", "<M-K>", moveline.block_up)
-      vim.keymap.set("v", "<M-J>", moveline.block_down)
+      -- vim.keymap.set("v", "<M-K>", moveline.block_up)
+      -- vim.keymap.set("v", "<M-J>", moveline.block_down)
     end,
   },
   -- {
