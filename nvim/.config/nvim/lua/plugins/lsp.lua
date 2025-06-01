@@ -11,9 +11,10 @@ return {
       keys[#keys + 1] = { "gr", false }
 
       -- add keymaps
-      keys[#keys + 1] = { "ca", vim.lsp.buf.code_action, desc = "Code Action", mode = { "n", "v" }, has = "codeAction" }
+      keys[#keys + 1] =
+        { "<leader>ca", vim.lsp.buf.code_action, desc = "Code Action", mode = { "n", "v" }, has = "codeAction" }
       keys[#keys + 1] = {
-        "cA",
+        "<leader>cA",
         function()
           vim.lsp.buf.code_action({
             context = {
@@ -29,7 +30,7 @@ return {
       }
       if require("lazyvim.util").has("inc-rename.nvim") then
         keys[#keys + 1] = {
-          "cr",
+          "<leader>cr",
           function()
             local inc_rename = require("inc_rename")
             return ":" .. inc_rename.config.cmd_name .. " " .. vim.fn.expand("<cword>")
@@ -40,7 +41,7 @@ return {
         }
       else
         keys[#keys + 1] = {
-          "cr",
+          "<leader>cr",
           vim.lsp.buf.rename,
           desc = "Rename",
           has = "rename",

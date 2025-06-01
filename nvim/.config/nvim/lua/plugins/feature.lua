@@ -118,15 +118,15 @@ return {
       return keys
     end,
   },
-  {
-    "ahmedkhalf/project.nvim",
-    config = function()
-      require("project_nvim").setup({
-        silent_chdir = false,
-        patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json", "Cargo.toml" },
-      })
-    end,
-  },
+  -- {
+  --   "ahmedkhalf/project.nvim",
+  --   config = function()
+  --     require("project_nvim").setup({
+  --       silent_chdir = false,
+  --       patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json", "Cargo.toml" },
+  --     })
+  --   end,
+  -- },
   { "michaeljsmith/vim-indent-object" },
   {
     "aurum77/live-server.nvim",

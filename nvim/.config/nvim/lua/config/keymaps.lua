@@ -12,7 +12,7 @@ local opts = { noremap = true, silent = true }
 keymap.set("n", "dbw", "vb_d")
 
 -- Select all
-keymap.set("n", "<C-a>", "gg<S-v>G")
+-- keymap.set("n", "<C-a>", "gg<S-v>G")
 
 -- Disable continuations
 keymap.set("n", "<Leader>o", "o<Esc>^Da", opts)
@@ -43,9 +43,9 @@ keymap.set("n", "<C-w><up>", "<C-w>+")
 keymap.set("n", "<C-w><down>", "<C-w>-")
 
 -- Diagnostics
-keymap.set("n", "<C-j>", function()
-  vim.diagnostic.goto_next()
-end, opts)
+-- keymap.set("n", "<C-j>", function()
+--   vim.diagnostic.goto_next()
+-- end, opts)
 
 -- Inlay Hints
 keymap.set("n", "<leader>i", function()
