@@ -9,11 +9,10 @@ git:
 os:
   edit: "nvim"
   editAtLine: "{{editor}} +{{line}} -- {{filename}}"
-
 customCommands:
   - key: "C"
     command: "git cz commit"
     description: "commit with commitizen"
     context: "files"
     loadingText: "opening commitizen commit tool"
-    subprocess: true
+    output: terminal
