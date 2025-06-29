@@ -10,7 +10,7 @@ return {
       --   desc = "Explorer NeoTree (Root Dir)",
       -- },
       {
-        "sf",
+        "<leader>af",
         function()
           require("neo-tree.command").execute({ toggle = false, reveal_force_cwd = true })
         end,
