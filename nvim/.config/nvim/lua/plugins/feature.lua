@@ -162,15 +162,15 @@ return {
     ---@module 'oil'
     ---@type oil.SetupOpts
     opts = {
+      cleanup_delay_ms = 1000,
       view_options = {
-
         show_hidden = true,
       },
       watch_for_changes = true,
       keymaps = {
         ["<backspace>"] = { "actions.parent", mode = "n" },
         ["q"] = { "actions.close", mode = "n" },
-        ["."] = { "actions.open_cwd", mode = "n" },
+        ["g."] = { "actions.open_cwd", mode = "n" },
       },
     },
     -- Optional dependencies
