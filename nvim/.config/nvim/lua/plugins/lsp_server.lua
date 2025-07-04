@@ -51,7 +51,6 @@ return {
             },
           },
         },
-        -- volar = {},
         html = {},
         graphql = {
           file_types = { "graphql", "typescriptreact", "javascriptreact", "typescript", "javascript" },

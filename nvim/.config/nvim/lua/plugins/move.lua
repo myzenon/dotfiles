@@ -23,10 +23,10 @@ return {
     build = "make",
     config = function()
       local moveline = require("moveline")
-      vim.keymap.set("n", "<M-K>", moveline.up)
-      vim.keymap.set("n", "<M-J>", moveline.down)
-      vim.keymap.set("v", "<M-K>", moveline.block_up)
-      vim.keymap.set("v", "<M-J>", moveline.block_down)
+      vim.keymap.set("n", "<M-S-K>", moveline.up)
+      vim.keymap.set("n", "<M-S-J>", moveline.down)
+      vim.keymap.set("v", "<M-S-K>", moveline.block_up)
+      vim.keymap.set("v", "<M-S-J>", moveline.block_down)
     end,
   },
   -- {
@@ -43,9 +43,9 @@ return {
     "easymotion/vim-easymotion",
     lazy = true,
     keys = {
-      { ",", "<Plug>(easymotion-sn)", desc = "Find text" },
-      { "n", "<Plug>(easymotion-next)", desc = "Find next text" },
-      { "N", "<Plug>(easymotion-prev)", desc = "Find previous text" },
+      { "<leader>/", "<Plug>(easymotion-sn)", desc = "Find text" },
+      { "<leader>n", "<Plug>(easymotion-next)", desc = "Find next text" },
+      { "<leader>N", "<Plug>(easymotion-prev)", desc = "Find previous text" },
     },
   },
   {
