@@ -7,8 +7,7 @@ git:
   log:
     showWholeGraph: true
 os:
-  edit: "nvim"
-  editAtLine: "{{editor}} +{{line}} -- {{filename}}"
+  editPreset: nvim
 customCommands:
   - key: "C"
     command: "git cz commit"
