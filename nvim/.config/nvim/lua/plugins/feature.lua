@@ -162,6 +162,9 @@ return {
     ---@module 'oil'
     ---@type oil.SetupOpts
     opts = {
+      win_options = {
+        signcolumn = "yes:2",
+      },
       cleanup_delay_ms = 1000,
       view_options = {
         show_hidden = true,
@@ -174,7 +177,9 @@ return {
       },
     },
     -- Optional dependencies
-    dependencies = { { "echasnovski/mini.icons", opts = {} } },
+    dependencies = {
+      { "echasnovski/mini.icons", opts = {} },
+    },
     -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
     -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
     lazy = false,
@@ -185,5 +190,17 @@ return {
         desc = "Open directory in float",
       },
     },
+  },
+  {
+    "refractalize/oil-git-status.nvim",
+    dependencies = {
+      "stevearc/oil.nvim",
+    },
+    config = true,
+  },
+  {
+    "JezerM/oil-lsp-diagnostics.nvim",
+    dependencies = { "stevearc/oil.nvim" },
+    opts = {},
   },
 }
