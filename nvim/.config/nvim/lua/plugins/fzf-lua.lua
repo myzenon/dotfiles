@@ -1,6 +1,11 @@
 return {
   "ibhagwan/fzf-lua",
   opts = {
+    keymap = {
+      builtin = {
+        ["<C-q>"] = "hide",
+      },
+    },
     winopts = {
       preview = {
         layout = "vertical",

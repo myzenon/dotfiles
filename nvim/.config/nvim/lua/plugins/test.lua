@@ -7,7 +7,7 @@ return {
     require("neotest").setup({
       adapters = {
         require("neotest-jest")({
-          jestCommand = "npm test --",
+          jestCommand = "npm run rtest --",
           jestConfigFile = "custom.jest.config.ts",
           env = { CI = true },
           cwd = function(path)
