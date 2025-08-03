@@ -203,4 +203,23 @@ return {
     dependencies = { "stevearc/oil.nvim" },
     opts = {},
   },
+  {
+    "code-biscuits/nvim-biscuits",
+    event = "BufRead",
+    config = {
+      show_on_start = true,
+    },
+    keys = {
+      {
+        "<leader>bb",
+        function()
+          local nvim_biscuits = require("nvim-biscuits")
+          nvim_biscuits.BufferAttach()
+          nvim_biscuits.toggle_biscuits()
+        end,
+        mode = "n",
+        desc = "Enable Biscuits",
+      },
+    },
+  },
 }
