@@ -26,3 +26,11 @@ vim.api.nvim_create_autocmd("FileType", {
 --   pattern = "*",
 --   command = "lua vim.lsp.inlay_hint.enable(true)",
 -- })
+--
+-- Temp for postcss
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "css" },
+  callback = function()
+    vim.cmd("set filetype=scss")
+  end,
+})
