@@ -178,7 +178,7 @@ return {
     },
     -- Optional dependencies
     dependencies = {
-      { "echasnovski/mini.icons", opts = {} },
+      { "nvim-mini/mini.icons", opts = {} },
     },
     -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
     -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
@@ -203,23 +203,23 @@ return {
     dependencies = { "stevearc/oil.nvim" },
     opts = {},
   },
-  {
-    "code-biscuits/nvim-biscuits",
-    event = "BufRead",
-    config = {
-      show_on_start = true,
-    },
-    keys = {
-      {
-        "<leader>bb",
-        function()
-          local nvim_biscuits = require("nvim-biscuits")
-          nvim_biscuits.BufferAttach()
-          nvim_biscuits.toggle_biscuits()
-        end,
-        mode = "n",
-        desc = "Enable Biscuits",
-      },
-    },
-  },
+  -- {
+  --   "code-biscuits/nvim-biscuits",
+  --   event = "BufRead",
+  --   config = {
+  --     show_on_start = true,
+  --   },
+  --   keys = {
+  --     {
+  --       "<leader>bb",
+  --       function()
+  --         local nvim_biscuits = require("nvim-biscuits")
+  --         nvim_biscuits.BufferAttach()
+  --         nvim_biscuits.toggle_biscuits()
+  --       end,
+  --       mode = "n",
+  --       desc = "Enable Biscuits",
+  --     },
+  --   },
+  -- },
 }
