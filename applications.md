@@ -1,6 +1,7 @@
 # Applications
 
 <!--toc:start-->
+
 - [Installation](#installation)
 <!--toc:end-->
 
@@ -17,3 +18,4 @@
 - commitizen: `brew install commitizen`
 - ripgrep: `brew install ripgrep`
 - fzf: `brew install fzf`
+- tree-sitter: `brew install tree-sitter-cli`
