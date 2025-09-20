@@ -222,4 +222,13 @@ return {
   --     },
   --   },
   -- },
+  --
+  {
+    "uga-rosa/translate.nvim",
+    config = {
+      default = {
+        output = "replace",
+      },
+    },
+  },
 }
