@@ -2,72 +2,130 @@ return {
   -- LSP keymaps
   {
     "neovim/nvim-lspconfig",
-    opts = function(_, opts)
-      local keys = require("lazyvim.plugins.lsp.keymaps").get()
-      -- remove keymaps
-      keys[#keys + 1] = { "<leader>ca", false }
-      keys[#keys + 1] = { "<leader>cA", false }
-      keys[#keys + 1] = { "<leader>cr", false }
-      keys[#keys + 1] = { "gr", false }
-
-      -- add keymaps
-      keys[#keys + 1] =
-        { "<leader>ca", vim.lsp.buf.code_action, desc = "Code Action", mode = { "n", "v" }, has = "codeAction" }
-      keys[#keys + 1] = {
-        "<leader>cA",
-        function()
-          vim.lsp.buf.code_action({
-            context = {
-              only = {
-                "source",
-              },
-              diagnostics = {},
+    opts = {
+      servers = {
+        ["*"] = {
+          keys = {
+            { "gd", vim.lsp.buf.definition, desc = "Goto Definition", has = "definition" },
+            { "<leader>ca", vim.lsp.buf.code_action, mode = { "n", "v" }, desc = "Code Action", has = "codeAction" },
+            { "E", vim.diagnostic.open_float, desc = "Open float diagnostic" },
+            {
+              "K",
+              function()
+                return vim.lsp.buf.hover()
+              end,
+              desc = "Hover",
             },
-          })
-        end,
-        desc = "Source Action",
-        has = "codeAction",
-      }
-      if require("lazyvim.util").has("inc-rename.nvim") then
-        keys[#keys + 1] = {
-          "<leader>cr",
-          function()
-            local inc_rename = require("inc_rename")
-            return ":" .. inc_rename.config.cmd_name .. " " .. vim.fn.expand("<cword>")
-          end,
-          expr = true,
-          desc = "Rename",
-          has = "rename",
-        }
-      else
-        keys[#keys + 1] = {
-          "<leader>cr",
-          vim.lsp.buf.rename,
-          desc = "Rename",
-          has = "rename",
-        }
-      end
+            {
+              "gK",
+              function()
+                return vim.lsp.buf.signature_help()
+              end,
+              desc = "Signature Help",
+              has = "signatureHelp",
+            },
+            { "gR", vim.lsp.buf.references, desc = "References", nowait = true },
+            { "gI", vim.lsp.buf.implementation, desc = "Goto Implementation" },
+            { "gy", vim.lsp.buf.type_definition, desc = "Goto T[y]pe Definition" },
+            { "gD", vim.lsp.buf.declaration, desc = "Goto Declaration" },
+            {
+              "<leader>cR",
+              function()
+                Snacks.rename.rename_file()
+              end,
+              desc = "Rename File",
+              mode = { "n" },
+              has = { "workspace/didRenameFiles", "workspace/willRenameFiles" },
+            },
+            {
+              "]]",
+              function()
+                Snacks.words.jump(vim.v.count1)
+              end,
+              has = "documentHighlight",
 
-      keys[#keys + 1] = {
-        "E",
-        vim.diagnostic.open_float,
-        desc = "Open float diagnostic",
-      }
-      keys[#keys + 1] = {
-        "gR",
-        "<cmd>Telescope lsp_references<cr>",
-        desc = "References",
-      }
-      opts.setup.eslint = function()
-        require("lazyvim.util").lsp.on_attach(function(client)
-          if client.name == "eslint" then
-            client.server_capabilities.documentFormattingProvider = true
-          elseif client.name == "tsserver" or client.name == "vtsls" or client.name == "volar" then
-            client.server_capabilities.documentFormattingProvider = false
-          end
-        end)
-      end
-    end,
+              desc = "Next Reference",
+              cond = function()
+                return Snacks.words.is_enabled()
+              end,
+            },
+
+            {
+              "[[",
+              function()
+                Snacks.words.jump(-vim.v.count1)
+              end,
+              has = "documentHighlight",
+
+              desc = "Prev Reference",
+              cond = function()
+                return Snacks.words.is_enabled()
+              end,
+            },
+          },
+        },
+      },
+    },
+    -- opts = function(_, opts)
+    -- local keys = require("lazyvim.plugins.lsp.keymaps").get()
+    -- -- remove keymaps
+    -- keys[#keys + 1] = { "<leader>ca", false }
+    -- keys[#keys + 1] = { "<leader>cA", false }
+    -- keys[#keys + 1] = { "<leader>cr", false }
+    -- keys[#keys + 1] = { "gr", false }
+    --
+    -- -- add keymaps
+    -- keys[#keys + 1] =
+    -- keys[#keys + 1] = {
+    --   "<leader>cA",
+    --   function()
+    --     vim.lsp.buf.code_action({
+    --       context = {
+    --         only = {
+    --           "source",
+    --         },
+    --         diagnostics = {},
+    --       },
+    --     })
+    --   end,
+    --   desc = "Source Action",
+    --   has = "codeAction",
+    -- }
+    -- if require("lazyvim.util").has("inc-rename.nvim") then
+    --   keys[#keys + 1] = {
+    --     "<leader>cr",
+    --     function()
+    --       local inc_rename = require("inc_rename")
+    --       return ":" .. inc_rename.config.cmd_name .. " " .. vim.fn.expand("<cword>")
+    --     end,
+    --     expr = true,
+    --     desc = "Rename",
+    --     has = "rename",
+    --   }
+    -- else
+    --   keys[#keys + 1] = {
+    --     "<leader>cr",
+    --     vim.lsp.buf.rename,
+    --     desc = "Rename",
+    --     has = "rename",
+    --   }
+    -- end
+    --
+    -- keys[#keys + 1] = {
+    --   "gR",
+    --   "<cmd>Telescope lsp_references<cr>",
+    --   desc = "References",
+    -- }
+    -- opts.setup.eslint = function()
+    --   require("lazyvim.util").lsp.on_attach(function(client)
+    --     if client.name == "eslint" then
+    --       client.server_capabilities.documentFormattingProvider = true
+    --     elseif client.name == "tsserver" or client.name == "vtsls" or client.name == "volar" then
+    --       client.server_capabilities.documentFormattingProvider = false
+    --     end
+    --   end)
+    -- end
+    -- end,
   },
   {
     "smjonas/inc-rename.nvim",
