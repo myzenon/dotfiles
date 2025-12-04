@@ -47,6 +47,7 @@ return {
         "scss",
         "sql",
         "graphql",
+        "python",
       },
 
       indent = {

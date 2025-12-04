@@ -1,14 +1,14 @@
 return {
-  {
-    "rcarriga/nvim-notify",
-    opts = {
-      fps = 120,
-      stages = "slide",
-      render = "compact",
-      top_down = false,
-      timeout = 1000,
-    },
-  },
+  -- {
+  --   "rcarriga/nvim-notify",
+  --   opts = {
+  --     fps = 120,
+  --     stages = "slide",
+  --     render = "compact",
+  --     top_down = false,
+  --     timeout = 1000,
+  --   },
+  -- },
   {
     "folke/noice.nvim",
     enabled = true,
