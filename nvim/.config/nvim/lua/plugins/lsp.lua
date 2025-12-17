@@ -6,24 +6,40 @@ return {
       servers = {
         ["*"] = {
           keys = {
-            { "gd", vim.lsp.buf.definition, desc = "Goto Definition", has = "definition" },
+            -- { "gd", vim.lsp.buf.definition, desc = "Goto Definition", has = "definition" },
+            -- {
+            --   "gd",
+            --   function()
+            --     require("lazyvim.util").pick("lsp_definitions")()
+            --   end,
+            --   desc = "Goto Definition",
+            --   has = "definition",
+            -- },
+            -- {
+            --   "gd",
+            --   function()
+            --     Snacks.picker.lsp_definitions()
+            --   end,
+            --   desc = "Goto Definition",
+            --   has = "definition",
+            -- },
             { "<leader>ca", vim.lsp.buf.code_action, mode = { "n", "v" }, desc = "Code Action", has = "codeAction" },
             { "E", vim.diagnostic.open_float, desc = "Open float diagnostic" },
-            {
-              "K",
-              function()
-                return vim.lsp.buf.hover()
-              end,
-              desc = "Hover",
-            },
-            {
-              "gK",
-              function()
-                return vim.lsp.buf.signature_help()
-              end,
-              desc = "Signature Help",
-              has = "signatureHelp",
-            },
+            -- {
+            --   "K",
+            --   function()
+            --     return vim.lsp.buf.hover()
+            --   end,
+            --   desc = "Hover",
+            -- },
+            -- {
+            --   "gK",
+            --   function()
+            --     return vim.lsp.buf.signature_help()
+            --   end,
+            --   desc = "Signature Help",
+            --   has = "signatureHelp",
+            -- },
             { "gR", vim.lsp.buf.references, desc = "References", nowait = true },
             { "gI", vim.lsp.buf.implementation, desc = "Goto Implementation" },
             { "gy", vim.lsp.buf.type_definition, desc = "Goto T[y]pe Definition" },
