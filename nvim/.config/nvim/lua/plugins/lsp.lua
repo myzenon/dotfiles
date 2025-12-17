@@ -23,7 +23,13 @@ return {
             --   desc = "Goto Definition",
             --   has = "definition",
             -- },
-            { "<leader>ca", vim.lsp.buf.code_action, mode = { "n", "v" }, desc = "Code Action", has = "codeAction" },
+            {
+              "<leader>ca",
+              "<cmd>lsp_code_actions<cr>",
+              mode = { "n", "v" },
+              desc = "Code Action",
+              has = "codeAction",
+            },
             { "E", vim.diagnostic.open_float, desc = "Open float diagnostic" },
             -- {
             --   "K",
@@ -40,10 +46,10 @@ return {
             --   desc = "Signature Help",
             --   has = "signatureHelp",
             -- },
-            { "gR", vim.lsp.buf.references, desc = "References", nowait = true },
-            { "gI", vim.lsp.buf.implementation, desc = "Goto Implementation" },
-            { "gy", vim.lsp.buf.type_definition, desc = "Goto T[y]pe Definition" },
-            { "gD", vim.lsp.buf.declaration, desc = "Goto Declaration" },
+            -- { "gR", vim.lsp.buf.references, desc = "References", nowait = true },
+            -- { "gI", vim.lsp.buf.implementation, desc = "Goto Implementation" },
+            -- { "gy", vim.lsp.buf.type_definition, desc = "Goto T[y]pe Definition" },
+            { "gD", "<cmd>FzfLua lsp_declarations<cr>", desc = "Goto Declaration" },
             {
               "<leader>cR",
               function()
@@ -61,9 +67,6 @@ return {
               has = "documentHighlight",
 
               desc = "Next Reference",
-              cond = function()
-                return Snacks.words.is_enabled()
-              end,
             },
 
             {
@@ -74,9 +77,6 @@ return {
               has = "documentHighlight",
 
               desc = "Prev Reference",
-              cond = function()
-                return Snacks.words.is_enabled()
-              end,
             },
           },
         },

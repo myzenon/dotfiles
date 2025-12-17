@@ -172,7 +172,7 @@ return {
       watch_for_changes = true,
       keymaps = {
         ["<backspace>"] = { "actions.parent", mode = "n" },
-        ["q"] = { "actions.close", mode = "n" },
+        ["<esc>"] = { "actions.close", mode = "n" },
         ["g."] = { "actions.open_cwd", mode = "n" },
       },
     },
