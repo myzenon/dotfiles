@@ -3,7 +3,7 @@ return {
   opts = {
     keymap = {
       builtin = {
-        ["<C-q>"] = "hide",
+        ["<M-q>"] = "hide",
       },
     },
     winopts = {

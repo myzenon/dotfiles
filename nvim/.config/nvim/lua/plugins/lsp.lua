@@ -25,7 +25,7 @@ return {
             -- },
             {
               "<leader>ca",
-              "<cmd>lsp_code_actions<cr>",
+              "<cmd>FzfLua lsp_code_actions<cr>",
               mode = { "n", "v" },
               desc = "Code Action",
               has = "codeAction",
