@@ -60,9 +60,6 @@ return {
           },
         },
         html = {},
-        graphql = {
-          file_types = { "graphql", "typescriptreact", "javascriptreact", "typescript", "javascript" },
-        },
         yamlls = {
           settings = {
             yaml = {
@@ -135,6 +132,9 @@ return {
             },
           },
         },
+        eslint = { enabled = true },
+        graphql = { enabled = false },
+        vtsls = { enabled = false },
       },
       -- setup = {
       --   tsserver = function(_, opts)

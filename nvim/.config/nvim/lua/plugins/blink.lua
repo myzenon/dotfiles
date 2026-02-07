@@ -18,6 +18,12 @@ return {
             label_detail = {
               width = { max = 30 },
               text = function(ctx)
+                if ctx.item.data then
+                  return ctx.item.data
+                    and ctx.item.data.entryNames
+                    and ctx.item.data.entryNames[1]
+                    and ctx.item.data.entryNames[1].source
+                end
                 return ctx.item.detail
               end,
               highlight = "BlinkCmpLabelDescription",
