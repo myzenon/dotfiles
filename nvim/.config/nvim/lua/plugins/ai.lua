@@ -28,7 +28,7 @@ return {
       local cwd = vim.uv.cwd()
       local basename = vim.fs.basename(cwd)
       _99.setup({
-        model = "google/gemini-3-pro-preview",
+        model = "google/gemini-2.5-flash",
         -- provider = _99.OpenCodeProvider, -- default: OpenCodeProvider
         -- logger = {
         --   level = _99.DEBUG,
