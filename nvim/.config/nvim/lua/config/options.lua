@@ -65,4 +65,19 @@ vim.cmd([[ set ttyfast ]])
 -- Disable ESLint auto format
 vim.g.lazyvim_eslint_auto_format = false
 
--- vim.g.lazyvim_rust_diagnostics = "bacon-ls"
+if vim.fn.has("wsl") == 1 then
+  vim.g["system_copy#copy_command"] = 'perl -pe "chomp if eof" | clip.exe'
+  vim.g["system_copy#paste_command"] = 'powershell.exe -noprofile -command Get-Clipboard | tr -d "\\r"'
+  vim.g.clipboard = {
+    name = "WslClipboard",
+    copy = {
+      ["+"] = "clip.exe",
+      ["*"] = "clip.exe",
+    },
+    paste = {
+      ["+"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+      ["*"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+    },
+    cache_enabled = 0,
+  }
+end
