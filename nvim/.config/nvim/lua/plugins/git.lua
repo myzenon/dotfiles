@@ -22,7 +22,7 @@ return {
   },
   {
     "tpope/vim-fugitive",
-    lazy = true,
+    lazy = false,
     keys = {
       {
         "<leader>gd",
