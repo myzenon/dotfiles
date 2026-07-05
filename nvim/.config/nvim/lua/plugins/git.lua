@@ -31,6 +31,9 @@ return {
       },
     },
   },
+  {
+    "sindrets/diffview.nvim",
+  },
   -- {
   --   "tanvirtin/vgit.nvim",
   --   dependencies = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons" },
