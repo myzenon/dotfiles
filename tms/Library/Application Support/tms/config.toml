@@ -3,4 +3,4 @@ recursive_submodules = false
 
 [[search_dirs]]
 path = "/Users/zenon/Projects"
-depth = 2
+depth = 3

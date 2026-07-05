@@ -1,6 +1,7 @@
 gui:
   expandFocusedSidePanel: true
 git:
+  overrideGpg: true
   pagers:
     - colorArg: never
       pager: delta --dark --paging=never

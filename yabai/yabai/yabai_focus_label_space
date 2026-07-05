@@ -1,0 +1,10 @@
+#!/bin/bash
+
+SPACE_LABEL="$1"
+SPACE_INDEX=$(yabai -m query --spaces | jq --arg label $SPACE_LABEL '.[] | select(.label == $label) | .index')
+
+if [ -z "$SPACE_INDEX" ]; then
+    $HOME/yabai/yabai_create_label_space $SPACE_LABEL
+fi
+
+yabai -m space --focus $SPACE_LABEL
