@@ -1,0 +1,23 @@
+onboarding = false
+[theme]
+name = "kanagawa"
+auto_switch = false
+
+[ui.toast]
+delivery = "system"
+
+[ui]
+show_agent_labels_on_pane_borders = true
+
+[experimental]
+pane_history = true
+
+[remote]
+manage_ssh_config = true
+
+[keys]
+prefix = "ctrl+t"
+split_horizontal = "prefix+d"
+
+[terminal]
+shell_mode = "login"
