@@ -11,6 +11,7 @@ show_agent_labels_on_pane_borders = true
 
 [experimental]
 pane_history = true
+kitty_graphics = true
 
 [remote]
 manage_ssh_config = true
@@ -21,3 +22,60 @@ split_horizontal = "prefix+d"
 
 [terminal]
 shell_mode = "login"
+
+[[keys.command]]
+key = "prefix+p"
+type = "plugin_action"
+command = "sessionizer.open"
+description = "open project workspace"
+
+[[keys.command]]
+key = "ctrl+h"
+type = "plugin_action"
+command = "herdr-splits.nav-left"
+
+[[keys.command]]
+key = "ctrl+j"
+type = "plugin_action"
+command = "herdr-splits.nav-down"
+
+[[keys.command]]
+key = "ctrl+k"
+type = "plugin_action"
+command = "herdr-splits.nav-up"
+
+[[keys.command]]
+key = "ctrl+l"
+type = "plugin_action"
+command = "herdr-splits.nav-right"
+
+[[keys.command]]
+key = "alt+h"
+type = "plugin_action"
+command = "herdr-splits.resize-left"
+
+[[keys.command]]
+key = "alt+j"
+type = "plugin_action"
+command = "herdr-splits.resize-down"
+
+[[keys.command]]
+key = "alt+k"
+type = "plugin_action"
+command = "herdr-splits.resize-up"
+
+[[keys.command]]
+key = "alt+l"
+type = "plugin_action"
+command = "herdr-splits.resize-right"
+
+[[keys.command]]
+key = "prefix+t"
+type = "plugin_action"
+command = "herdr-navigator.open"
+description = "jump to anything"
+
+[[keys.command]]
+key = "prefix+r"
+type = "plugin_action"
+command = "persiyanov.reviewr.toggle"

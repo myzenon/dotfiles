@@ -1,0 +1,379 @@
+[
+  {
+    "plugin_id": "herdr-navigator",
+    "name": "Herdr Navigator",
+    "version": "0.3.3",
+    "min_herdr_version": "0.7.3",
+    "description": "Jump to any Herdr workspace, agent, project, session, remote, directory, or action from one fuzzy navigator.",
+    "manifest_path": "/Users/zenon/dotfiles/herdr/.config/herdr/plugins/github/herdr-navigator-3a5a6fa5dfb5/herdr-plugin.toml",
+    "plugin_root": "/Users/zenon/dotfiles/herdr/.config/herdr/plugins/github/herdr-navigator-3a5a6fa5dfb5",
+    "enabled": true,
+    "platforms": [
+      "linux",
+      "macos"
+    ],
+    "build": [
+      {
+        "command": [
+          "cargo",
+          "build",
+          "--release"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "jump-back",
+        "title": "Herdr Navigator: jump back",
+        "contexts": [
+          "workspace",
+          "global"
+        ],
+        "command": [
+          "./target/release/herdr-navigator",
+          "jump-back"
+        ]
+      },
+      {
+        "id": "open",
+        "title": "Herdr Navigator: open",
+        "contexts": [
+          "workspace",
+          "global"
+        ],
+        "command": [
+          "./target/release/herdr-navigator",
+          "open"
+        ]
+      },
+      {
+        "id": "open-side",
+        "title": "Herdr Navigator: side pane",
+        "contexts": [
+          "workspace",
+          "global"
+        ],
+        "command": [
+          "./target/release/herdr-navigator",
+          "open-side"
+        ]
+      }
+    ],
+    "panes": [
+      {
+        "id": "picker",
+        "title": "Herdr Navigator",
+        "placement": "overlay",
+        "command": [
+          "./target/release/herdr-navigator",
+          "ui"
+        ]
+      },
+      {
+        "id": "picker-side",
+        "title": "Navigator Side",
+        "placement": "split",
+        "command": [
+          "./target/release/herdr-navigator",
+          "ui",
+          "--side"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "thanhdat77",
+      "repo": "herdr-navigator",
+      "requested_ref": "v0.3.3",
+      "resolved_commit": "03b803a00341d58382b6cda70a7cd618af5b8806",
+      "managed_path": "/Users/zenon/.config/herdr/plugins/github/herdr-navigator-3a5a6fa5dfb5",
+      "installed_unix_ms": 1785645863424
+    }
+  },
+  {
+    "plugin_id": "herdr-splits",
+    "name": "Herdr Splits",
+    "version": "0.5.2",
+    "min_herdr_version": "0.7.0",
+    "description": "Seamless navigation and resizing between Herdr panes and Neovim splits",
+    "manifest_path": "/Users/zenon/dotfiles/herdr/.config/herdr/plugins/github/herdr-splits-d880c4924f2b/herdr-plugin.toml",
+    "plugin_root": "/Users/zenon/dotfiles/herdr/.config/herdr/plugins/github/herdr-splits-d880c4924f2b",
+    "enabled": true,
+    "platforms": [
+      "linux",
+      "macos"
+    ],
+    "actions": [
+      {
+        "id": "nav-down",
+        "title": "Navigate down (Neovim/Herder)",
+        "contexts": [
+          "global"
+        ],
+        "command": [
+          "bash",
+          "scripts/herdr-nav.sh",
+          "down"
+        ]
+      },
+      {
+        "id": "nav-left",
+        "title": "Navigate left (Neovim/Herder)",
+        "contexts": [
+          "global"
+        ],
+        "command": [
+          "bash",
+          "scripts/herdr-nav.sh",
+          "left"
+        ]
+      },
+      {
+        "id": "nav-right",
+        "title": "Navigate right (Neovim/Herder)",
+        "contexts": [
+          "global"
+        ],
+        "command": [
+          "bash",
+          "scripts/herdr-nav.sh",
+          "right"
+        ]
+      },
+      {
+        "id": "nav-up",
+        "title": "Navigate up (Neovim/Herder)",
+        "contexts": [
+          "global"
+        ],
+        "command": [
+          "bash",
+          "scripts/herdr-nav.sh",
+          "up"
+        ]
+      },
+      {
+        "id": "resize-down",
+        "title": "Resize down (Neovim/Herder)",
+        "contexts": [
+          "global"
+        ],
+        "command": [
+          "bash",
+          "scripts/herdr-resize.sh",
+          "down"
+        ]
+      },
+      {
+        "id": "resize-left",
+        "title": "Resize left (Neovim/Herder)",
+        "contexts": [
+          "global"
+        ],
+        "command": [
+          "bash",
+          "scripts/herdr-resize.sh",
+          "left"
+        ]
+      },
+      {
+        "id": "resize-right",
+        "title": "Resize right (Neovim/Herder)",
+        "contexts": [
+          "global"
+        ],
+        "command": [
+          "bash",
+          "scripts/herdr-resize.sh",
+          "right"
+        ]
+      },
+      {
+        "id": "resize-up",
+        "title": "Resize up (Neovim/Herder)",
+        "contexts": [
+          "global"
+        ],
+        "command": [
+          "bash",
+          "scripts/herdr-resize.sh",
+          "up"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "lmilojevicc",
+      "repo": "herdr-splits.nvim",
+      "resolved_commit": "c58bfdf01520845583e0033c11c56fc9d21a5424",
+      "managed_path": "/Users/zenon/.config/herdr/plugins/github/herdr-splits-d880c4924f2b",
+      "installed_unix_ms": 1785645442484
+    }
+  },
+  {
+    "plugin_id": "persiyanov.reviewr",
+    "name": "reviewr",
+    "version": "0.29.0",
+    "min_herdr_version": "0.7.5",
+    "description": "Review agent-written diffs beside the chat and add line comments to the agent input.",
+    "manifest_path": "/Users/zenon/dotfiles/herdr/.config/herdr/plugins/github/persiyanov.reviewr-e87b654a74f8/herdr-plugin.toml",
+    "plugin_root": "/Users/zenon/dotfiles/herdr/.config/herdr/plugins/github/persiyanov.reviewr-e87b654a74f8",
+    "enabled": true,
+    "platforms": [
+      "macos",
+      "linux"
+    ],
+    "build": [
+      {
+        "command": [
+          "bash",
+          "herdr/install.sh"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "close",
+        "title": "reviewr: close pane",
+        "contexts": [
+          "pane",
+          "workspace"
+        ],
+        "command": [
+          "bash",
+          "herdr/pane.sh",
+          "close"
+        ]
+      },
+      {
+        "id": "open",
+        "title": "reviewr: open pane",
+        "contexts": [
+          "pane",
+          "workspace"
+        ],
+        "command": [
+          "bash",
+          "herdr/pane.sh",
+          "open"
+        ]
+      },
+      {
+        "id": "toggle",
+        "title": "reviewr: toggle pane",
+        "contexts": [
+          "pane",
+          "workspace"
+        ],
+        "command": [
+          "bash",
+          "herdr/pane.sh",
+          "toggle"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "on": "worktree.created",
+        "command": [
+          "bash",
+          "herdr/pane.sh",
+          "auto-open"
+        ]
+      }
+    ],
+    "panes": [
+      {
+        "id": "pane",
+        "title": "reviewr",
+        "placement": "split",
+        "command": [
+          "sh",
+          "-c",
+          "exec \"$HERDR_PLUGIN_ROOT/bin/herdr-reviewr\""
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "persiyanov",
+      "repo": "herdr-reviewr",
+      "resolved_commit": "42ccaaa72176937181c82a91484f97466fb5ed59",
+      "managed_path": "/Users/zenon/.config/herdr/plugins/github/persiyanov.reviewr-e87b654a74f8",
+      "installed_unix_ms": 1785584063669
+    }
+  },
+  {
+    "plugin_id": "sessionizer",
+    "name": "Sessionizer",
+    "version": "0.7.1",
+    "min_herdr_version": "0.7.4",
+    "description": "Inspired by ThePrimeagen's tmux-sessionizer: fuzzy pickers to open projects and Git worktrees into Herdr workspaces.",
+    "manifest_path": "/Users/zenon/dotfiles/herdr/.config/herdr/plugins/github/sessionizer-66e03d1ff740/herdr-plugin.toml",
+    "plugin_root": "/Users/zenon/dotfiles/herdr/.config/herdr/plugins/github/sessionizer-66e03d1ff740",
+    "enabled": true,
+    "platforms": [
+      "macos",
+      "linux"
+    ],
+    "build": [
+      {
+        "command": [
+          "bun",
+          "install",
+          "--frozen-lockfile"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "open",
+        "title": "Open sessionizer",
+        "command": [
+          "bun",
+          "run",
+          "src/sessionizer/open-pane.ts"
+        ]
+      },
+      {
+        "id": "worktree-open",
+        "title": "Open worktree",
+        "command": [
+          "bun",
+          "run",
+          "src/worktree/open-worktree-pane.ts"
+        ]
+      }
+    ],
+    "panes": [
+      {
+        "id": "sessionizer",
+        "title": "Sessionizer",
+        "placement": "overlay",
+        "command": [
+          "bun",
+          "run",
+          "src/sessionizer/sessionizer-pane.ts"
+        ]
+      },
+      {
+        "id": "worktree",
+        "title": "Worktree",
+        "placement": "overlay",
+        "command": [
+          "bun",
+          "run",
+          "src/worktree/worktree-pane.ts"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "andrewchng",
+      "repo": "herdr-sessionizer",
+      "resolved_commit": "20827358a8da57b83d479cf899909bbf11919541",
+      "managed_path": "/Users/zenon/.config/herdr/plugins/github/sessionizer-66e03d1ff740",
+      "installed_unix_ms": 1785592922411
+    }
+  }
+]
