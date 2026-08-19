@@ -41,7 +41,7 @@ return {
         -- Herdr-side scripts agree. Pass Neovim notation (e.g. <M-Left>).
         nav_keys = { left = "<C-h>", down = "<C-j>", up = "<C-k>", right = "<C-l>" },
         resize_keys = { left = "<M-h>", down = "<M-j>", up = "<M-k>", right = "<M-l>" },
-        unzoom_on_nav = true, -- auto-unzoom when navigating away from a zoomed pane
+        unzoom_on_nav = false, -- auto-unzoom when navigating away from a zoomed pane
         nav_at_edge = "wrap", -- 'wrap' | 'stop' — Herdr pane-boundary wrap (distinct from at_edge)
       })
     end,
@@ -104,4 +104,78 @@ return {
       },
     },
   },
+  {
+    "makyinmars/herdr-context.nvim",
+    cond = vim.env.HERDR_ENV == "1",
+    lazy = false, -- keeps :checkhealth herdr-context discoverable before the first mapping
+    opts = {
+      submit = false,
+      focus_after_send = true,
+    },
+    keys = {
+      {
+        "<leader>ac",
+        function()
+          require("herdr-context").compose()
+        end,
+        mode = { "n", "v" },
+        desc = "Compose Herdr Context",
+      },
+      {
+        "<leader>ap",
+        function()
+          require("herdr-context").prompt()
+        end,
+        mode = { "n", "v" },
+        desc = "Prompt Herdr with Code Context",
+      },
+      {
+        "<leader>ay",
+        function()
+          require("herdr-context").reference()
+        end,
+        mode = { "n", "v" },
+        desc = "Send Reference to Herdr Agent",
+      },
+      {
+        "<leader>aY",
+        function()
+          require("herdr-context").send()
+        end,
+        mode = { "n", "v" },
+        desc = "Send Context to Herdr Agent",
+      },
+      {
+        "<leader>ad",
+        function()
+          require("herdr-context").diagnostics()
+        end,
+        mode = { "n", "v" },
+        desc = "Send Diagnostics to Herdr Agent",
+      },
+      {
+        "<leader>at",
+        function()
+          require("herdr-context").select_target()
+        end,
+        desc = "Select Herdr Agent",
+      },
+      {
+        "<leader>aa",
+        function()
+          require("herdr-context").agents()
+        end,
+        desc = "Toggle Herdr Agents",
+      },
+      {
+        "<leader>ar",
+        function()
+          require("herdr-context").refresh()
+        end,
+        desc = "Refresh Herdr Agents",
+      },
+    },
+  },
+
+  -- { "ChmaraX/herdr-nvim", opts = {} },
 }
