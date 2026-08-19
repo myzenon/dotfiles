@@ -1,5 +1,246 @@
 [
   {
+    "plugin_id": "chmarax.herdr-nvim",
+    "name": "herdr-nvim",
+    "version": "0.1.1",
+    "min_herdr_version": "0.7.4",
+    "description": "Full-height nvim sidebar with agent annotations: toggle with one key, comment code, send to any agent.",
+    "manifest_path": "/Users/zenon/dotfiles/herdr/.config/herdr/plugins/github/chmarax.herdr-nvim-178624809c23/herdr-plugin.toml",
+    "plugin_root": "/Users/zenon/dotfiles/herdr/.config/herdr/plugins/github/chmarax.herdr-nvim-178624809c23",
+    "enabled": true,
+    "platforms": [
+      "macos",
+      "linux"
+    ],
+    "build": [
+      {
+        "command": [
+          "bash",
+          "herdr/install.sh"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "open-link",
+        "title": "nvim sidebar: open clicked file",
+        "command": [
+          "sh",
+          "-c",
+          "exec sh \"$HERDR_PLUGIN_ROOT/herdr/run.sh\" open-link"
+        ]
+      },
+      {
+        "id": "pick-file",
+        "title": "nvim sidebar: open file from agent output",
+        "contexts": [
+          "pane"
+        ],
+        "command": [
+          "sh",
+          "-c",
+          "exec sh \"$HERDR_PLUGIN_ROOT/herdr/run.sh\" pick-file"
+        ]
+      },
+      {
+        "id": "toggle",
+        "title": "nvim sidebar: toggle",
+        "contexts": [
+          "pane",
+          "workspace"
+        ],
+        "command": [
+          "sh",
+          "-c",
+          "exec sh \"$HERDR_PLUGIN_ROOT/herdr/run.sh\" toggle"
+        ]
+      }
+    ],
+    "panes": [
+      {
+        "id": "picker",
+        "title": "open file",
+        "placement": "popup",
+        "command": [
+          "sh",
+          "-c",
+          "exec sh \"$HERDR_PLUGIN_ROOT/herdr/run.sh\" picker"
+        ]
+      }
+    ],
+    "link_handlers": [
+      {
+        "id": "file-path",
+        "title": "Open in nvim sidebar",
+        "pattern": "^~?[\\w.@/()\\[\\]+-]+/[\\w.@()\\[\\]+-]+\\.[A-Za-z]\\w*(?::\\d+){0,2}$",
+        "action": "open-link"
+      },
+      {
+        "id": "file-url",
+        "title": "Open in nvim sidebar",
+        "pattern": "^file://",
+        "action": "open-link"
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "ChmaraX",
+      "repo": "herdr-nvim",
+      "resolved_commit": "40aadeab3cef3702ef5e05069181c7168084794f",
+      "managed_path": "/Users/zenon/.config/herdr/plugins/github/chmarax.herdr-nvim-178624809c23",
+      "installed_unix_ms": 1786712871614
+    }
+  },
+  {
+    "plugin_id": "espresso",
+    "name": "Espresso Guard",
+    "version": "0.1.0",
+    "min_herdr_version": "0.7.0",
+    "description": "Keep macOS awake (incl. lid-closed) while a focused pane's agent is working.",
+    "manifest_path": "/Users/zenon/dotfiles/herdr/.config/herdr/plugins/github/espresso-3c4ef966f728/herdr-plugin.toml",
+    "plugin_root": "/Users/zenon/dotfiles/herdr/.config/herdr/plugins/github/espresso-3c4ef966f728",
+    "enabled": true,
+    "platforms": [
+      "macos"
+    ],
+    "build": [
+      {
+        "command": [
+          "cargo",
+          "build",
+          "--release"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "status",
+        "title": "Espresso: list monitored panes",
+        "contexts": [
+          "global"
+        ],
+        "command": [
+          "bash",
+          "bin/status"
+        ]
+      },
+      {
+        "id": "toggle",
+        "title": "Espresso: toggle monitor on focused pane",
+        "contexts": [
+          "pane",
+          "workspace",
+          "global"
+        ],
+        "command": [
+          "bash",
+          "bin/toggle"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "Hanyang-Li",
+      "repo": "herdr-espresso",
+      "resolved_commit": "4fcc93d01e94c38e63fa3431406d17218082b16d",
+      "managed_path": "/Users/zenon/.config/herdr/plugins/github/espresso-3c4ef966f728",
+      "installed_unix_ms": 1786884917868
+    }
+  },
+  {
+    "plugin_id": "herdr-context",
+    "name": "Herdr Context",
+    "version": "0.4.1",
+    "min_herdr_version": "0.7.5",
+    "description": "See live Herdr agents and stage structured Neovim context without submitting it",
+    "manifest_path": "/Users/zenon/dotfiles/herdr/.config/herdr/plugins/github/herdr-context-5f08f6d958f1/herdr-plugin.toml",
+    "plugin_root": "/Users/zenon/dotfiles/herdr/.config/herdr/plugins/github/herdr-context-5f08f6d958f1",
+    "enabled": true,
+    "platforms": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "actions": [
+      {
+        "id": "pin-target",
+        "title": "Pin context target",
+        "contexts": [
+          "global"
+        ],
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "bash",
+          "scripts/open-target-picker.sh"
+        ]
+      },
+      {
+        "id": "pin-target-windows",
+        "title": "Pin context target",
+        "contexts": [
+          "global"
+        ],
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          "powershell.exe",
+          "-NoProfile",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-File",
+          "scripts/open-target-picker.ps1"
+        ]
+      }
+    ],
+    "panes": [
+      {
+        "id": "target-picker",
+        "title": "Pin context target",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "placement": "popup",
+        "width": "80%",
+        "height": 20,
+        "command": [
+          "bash",
+          "scripts/target-picker.sh"
+        ]
+      },
+      {
+        "id": "target-picker-windows",
+        "title": "Pin context target",
+        "platforms": [
+          "windows"
+        ],
+        "placement": "popup",
+        "width": "80%",
+        "height": 20,
+        "command": [
+          "powershell.exe",
+          "-NoProfile",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-File",
+          "scripts/target-picker.ps1"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "makyinmars",
+      "repo": "herdr-context.nvim",
+      "resolved_commit": "727b1affae8c84b716bc10bde7b5578129ca90f1",
+      "managed_path": "/Users/zenon/.config/herdr/plugins/github/herdr-context-5f08f6d958f1",
+      "installed_unix_ms": 1786688071715
+    }
+  },
+  {
     "plugin_id": "herdr-navigator",
     "name": "Herdr Navigator",
     "version": "0.3.3",
@@ -208,6 +449,66 @@
       "resolved_commit": "c58bfdf01520845583e0033c11c56fc9d21a5424",
       "managed_path": "/Users/zenon/.config/herdr/plugins/github/herdr-splits-d880c4924f2b",
       "installed_unix_ms": 1785645442484
+    }
+  },
+  {
+    "plugin_id": "numbered-workspaces",
+    "name": "Numbered Workspaces",
+    "version": "0.3.0",
+    "min_herdr_version": "0.7.4",
+    "description": "Mirror each space's ordinal into a metadata token so the sidebar can show it.",
+    "manifest_path": "/Users/zenon/dotfiles/herdr/.config/herdr/plugins/github/numbered-workspaces-b180d9d59454/herdr-plugin.toml",
+    "plugin_root": "/Users/zenon/dotfiles/herdr/.config/herdr/plugins/github/numbered-workspaces-b180d9d59454",
+    "enabled": true,
+    "platforms": [
+      "linux",
+      "macos"
+    ],
+    "actions": [
+      {
+        "id": "renumber",
+        "title": "Renumber spaces",
+        "contexts": [
+          "global"
+        ],
+        "command": [
+          "./renumber.sh"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "on": "workspace.closed",
+        "command": [
+          "./renumber.sh"
+        ]
+      },
+      {
+        "on": "workspace.created",
+        "command": [
+          "./renumber.sh"
+        ]
+      },
+      {
+        "on": "workspace.focused",
+        "command": [
+          "./renumber.sh"
+        ]
+      },
+      {
+        "on": "workspace.moved",
+        "command": [
+          "./renumber.sh"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "abrose",
+      "repo": "herdr-numbered-workspaces",
+      "resolved_commit": "a204b92ddecf177d5ade2279e65cf193139762fb",
+      "managed_path": "/Users/zenon/.config/herdr/plugins/github/numbered-workspaces-b180d9d59454",
+      "installed_unix_ms": 1786413493531
     }
   },
   {
