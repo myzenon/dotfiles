@@ -1,0 +1,58 @@
+2026-07-24 17:22:49,582 --------------------------------------------------------------------------------
+2026-07-24 17:22:49,582 Working directory:
+2026-07-24 17:22:49,584   c:\
+2026-07-24 17:22:49,584    users\
+2026-07-24 17:22:49,584     sizen\
+2026-07-24 17:22:49,584      appdata\
+2026-07-24 17:22:49,584       local\
+2026-07-24 17:22:49,585        temp\
+2026-07-24 17:22:49,585         DisplayCAL-fhywom\
+2026-07-24 17:22:49,585 
+2026-07-24 17:22:49,585 Command line:
+2026-07-24 17:22:49,586   C:\Users\sizen\AppData\Roaming\DisplayCAL\ArgyllCMS\bin\dispread.exe
+2026-07-24 17:22:49,586     -v
+2026-07-24 17:22:49,586     -k
+2026-07-24 17:22:49,586     "C:\Program Files (x86)\DisplayCAL\linear.cal"
+2026-07-24 17:22:49,586     -d1
+2026-07-24 17:22:49,588     -c1
+2026-07-24 17:22:49,588     -yb
+2026-07-24 17:22:49,588     "-P0.506756756757,0.544817927171,1.0"
+2026-07-24 17:22:49,588     -F
+2026-07-24 17:22:49,589     0_16
+2026-07-24 17:22:49,589 
+2026-07-24 17:22:49,836 DisplayCAL: Starting interaction with subprocess
+2026-07-24 17:23:02,023 Number of patches = 3
+2026-07-24 17:23:02,023 Setting up the instrument
+2026-07-24 17:23:02,548 Instrument Type:   Datacolor SpyderX
+2026-07-24 17:23:02,548 Serial Number:     60175226
+2026-07-24 17:23:02,548 Hardware version:  2.07
+2026-07-24 17:23:02,799 
+2026-07-24 17:23:02,802 Place cap on the instrument, or place on a dark surface,
+2026-07-24 17:23:02,802 or place on the calibration reference,
+2026-07-24 17:23:02,802  and then hit any key to continue,
+2026-07-24 17:23:02,805 DisplayCAL: Waiting for send buffer
+2026-07-24 17:23:02,805 DisplayCAL: Detected instrument calibration message
+2026-07-24 17:23:02,805 DisplayCAL: Prompting to calibrate instrument
+2026-07-24 17:23:14,411 DisplayCAL: About to calibrate instrument
+2026-07-24 17:23:14,433 DisplayCAL: Sending buffer: ' '
+2026-07-24 17:23:14,433  or hit Esc or Q to abort:
+2026-07-24 17:23:15,696 Calibration complete
+2026-07-24 17:23:15,697 
+2026-07-24 17:23:15,700 DisplayCAL: Detected instrument calibration complete message
+2026-07-24 17:23:15,750 Place instrument on test window.
+2026-07-24 17:23:15,752 DisplayCAL: Waiting for send buffer
+2026-07-24 17:23:15,752 DisplayCAL: SpyderX cal time_t size = 8
+2026-07-24 17:23:15,753 DisplayCAL: SpyderX sensor cal 5 5 5
+2026-07-24 17:23:15,753 DisplayCAL: Detected instrument placement (screen/spot) message
+2026-07-24 17:23:15,753 DisplayCAL: Prompting to place instrument on screen
+2026-07-24 17:23:26,210 DisplayCAL: Instrument on screen
+2026-07-24 17:23:26,223 DisplayCAL: Sending buffer: ' '
+2026-07-24 17:23:26,223 Hit Esc or Q to give up, any other key to continue:
+2026-07-24 17:23:31,630 Patch 3 of 3
+2026-07-24 17:23:31,631 The instrument can be removed from the screen.
+2026-07-24 17:23:31,665 Written '0_16.ti3'
+2026-07-24 17:23:31,769 DisplayCAL: Reached EOF (OK)
+2026-07-24 17:23:31,769 dispread exitcode: 0
+2026-07-24 17:23:31,776 RGB level 0 is 0.146818 cd/m2
+2026-07-24 17:23:31,776 RGB level 16 is 0.612873 cd/m2
+2026-07-24 17:23:31,776 Assuming full range output levels
